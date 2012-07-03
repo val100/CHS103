@@ -1,0 +1,22 @@
+comm.jar --- be placed in: 
+%JAVA_HOME%/lib 
+%JAVA_HOME%/jre/lib/ext 
+
+win32com.dll should be placed in: 
+%JAVA_HOME%/bin 
+%JAVA_HOME%/jre/bin 
+%windir%System32 
+
+
+RXTXcomm.jar --- placed in: 
+%JAVA_HOME%/jre/lib/ext 
+%JAVA_HOME%/bin 
+
+javax.comm.properties ---- placed in: 
+%JAVA_HOME%/lib 
+%JAVA_HOME%/jre/lib 
+
+
+rxtxSerial.dll ---- placed in: 
+%JAVA_HOME%/jdk/jre/bin 
+%JAVA_HOME%/jre/bin 
