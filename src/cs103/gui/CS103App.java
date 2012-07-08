@@ -25,17 +25,13 @@ import chs103.physical.PropertyFileManager;
 import gnu.io.CommPortIdentifier;
 import gnu.io.NoSuchPortException;
 import gnu.io.PortInUseException;
-import java.awt.Color;
-import java.awt.Component;
-import java.awt.GridLayout;
+import java.awt.*;
 import java.io.IOException;
 import java.util.Enumeration;
 import java.util.Vector;
 import javax.swing.JOptionPane;
 import javax.swing.table.TableModel;
 import org.jfree.chart.ChartPanel;
-import java.awt.Dimension;
-import java.awt.Window;
 
 import java.awt.event.MouseEvent;
 import java.awt.image.BufferedImage;
@@ -54,14 +50,12 @@ import javax.swing.JToggleButton;
 import javax.swing.SwingUtilities;
 import javax.swing.table.TableCellRenderer;
 
-import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.beans.PropertyChangeEvent;
 import java.beans.PropertyChangeListener;
+import java.io.File;
 import java.util.Random;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javax.swing.ProgressMonitor;
 import javax.swing.SwingWorker;
 
@@ -1240,9 +1234,16 @@ public class CS103App extends javax.swing.JFrame implements Runnable, PropertyCh
         }
     }//GEN-LAST:event_btnPrintActionPerformed
 
+    /**
+     * Open user manual from menu.
+     * @param evt the menu item event
+     */
     private void mnuItemPCManualActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnuItemPCManualActionPerformed
-        try {                                     //try statement
-            Runtime.getRuntime().exec("rundll32 url.dll,FileProtocolHandler " + "help/PCUserManual.pdf");   //open the file chart.pdf
+        try {
+            File file = new File("help/PCUserManual.pdf");
+            Desktop.getDesktop().open(file);
+            //try statement
+//            Runtime.getRuntime().exec("rundll32 url.dll,FileProtocolHandler " + "help/PCUserManual.pdf");   //open the file chart.pdf
         } catch (Exception ex) {                  //catch any exceptions here
             ex.printStackTrace();  //print the error
         }
@@ -1267,8 +1268,11 @@ public class CS103App extends javax.swing.JFrame implements Runnable, PropertyCh
     }//GEN-LAST:event_mnuHelpActionPerformed
 
     private void mnuItemCS103ManualActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnuItemCS103ManualActionPerformed
-        try {                                     //try statement
-            Runtime.getRuntime().exec("rundll32 url.dll,FileProtocolHandler " + "help/CS103UserManualV4.0.pdf");   //open the file chart.pdf
+        try {
+            File file = new File("help/CS103UserManualV4.0.pdf");
+            Desktop.getDesktop().open(file);
+            //try statement
+//            Runtime.getRuntime().exec("rundll32 url.dll,FileProtocolHandler " + "help/CS103UserManualV4.0.pdf");   //open the file chart.pdf
         } catch (Exception ex) {                  //catch any exceptions here
             ex.printStackTrace();  //print the error
         }
